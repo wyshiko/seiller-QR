@@ -1,3 +1,0 @@
-([('QR-Generator',
-   '/Users/stephane/Documents/GitHub/seiller-QR/dist/QR-Generator',
-   'EXECUTABLE')],)

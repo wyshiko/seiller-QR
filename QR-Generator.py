@@ -4,7 +4,7 @@ from tkinter import filedialog
 
 root = tk.Tk()
 root.title('SEILLER - QR NOTICE')
-photo = tk.PhotoImage(file = "logo seiller.png")
+photo = tk.PhotoImage(file = "img/logo seiller.png")
 root.iconphoto(False, photo)
 
 def gen_qr():
@@ -36,7 +36,7 @@ def gen_qr():
         tk.Label(pop_up, text= "SUPER! Le QR code à bien été generé, merci.").pack(padx=10,pady=50)
     else:
         print('Veuillez entrer toutes les informations')
-img = tk.PhotoImage(file="logo seiller_full.png")
+img = tk.PhotoImage(file="img/logo seiller_full.png")
 tk.Label(root, image=img).pack(pady=10)
 
 tk.Label(root, text='QR CODE - NOTICE', font=("Helvetica", 12,"bold")).pack(pady=10)
