@@ -25,7 +25,7 @@ def gen_qr():
 
         #Creating an instance of qrcode
         img_bg = Image.open('img/print_pattern.png')
-        qr = qrcode.QRCode(box_size=18)
+        qr = qrcode.QRCode(box_size=16)
         qr.add_data(url)
         qr.make()
         img = qr.make_image()
