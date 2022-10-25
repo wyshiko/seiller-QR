@@ -1,5 +1,6 @@
 import tkinter as tk
 import qrcode
+from PIL import Image
 from tkinter import filedialog
 
 root = tk.Tk()
@@ -23,14 +24,14 @@ def gen_qr():
         name = file_name.get()
 
         #Creating an instance of qrcode
-        qr = qrcode.QRCode(
-                version=1,
-                box_size=10,
-                border=5)
+        img_bg = Image.open('img/print_pattern.png')
+        qr = qrcode.QRCode(box_size=18)
         qr.add_data(url)
-        qr.make(fit=True)
-        img = qr.make_image(fill='black', back_color='white')
-        img.save(f'{path}/{name}.jpg')
+        qr.make()
+        img = qr.make_image()
+        pos = (int((img_bg.size[0] - img.size[0])/2), int((img_bg.size[1] - img.size[1])/2))
+        img_bg.paste(img, pos)
+        img_bg.save(f'{path}/{name}.png')
 
         pop_up = tk.Toplevel(root)
         tk.Label(pop_up, text= "SUPER! Le QR code à bien été generé, merci.").pack(padx=10,pady=50)
